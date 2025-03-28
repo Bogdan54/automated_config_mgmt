@@ -1,0 +1,8 @@
+- name: Configure Network Devices
+  hosts: routers,switches
+  gather_facts: no
+  tasks:
+    - name: Ensure hostname is set
+      ios_config:
+        lines:
+          - hostname {{ inventory_hostname }}
